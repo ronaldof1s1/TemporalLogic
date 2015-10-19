@@ -41,10 +41,12 @@
 \headcommand {\beamer@subsectionentry {0}{3}{2}{30}{Semanthics of CTL}}\headcommand {\beamer@subsectionpages {10}{29}}
 \headcommand {\slideentry {3}{2}{1}{30/30}{Semanthics of CTL}{0}}
 \headcommand {\beamer@framepages {30}{30}}
-\headcommand {\slideentry {3}{2}{2}{31/31}{Semanthics of CTL}{0}}
-\headcommand {\beamer@framepages {31}{31}}
-\headcommand {\beamer@partpages {1}{31}}
-\headcommand {\beamer@subsectionpages {30}{31}}
-\headcommand {\beamer@sectionpages {10}{31}}
-\headcommand {\beamer@documentpages {31}}
-\headcommand {\def \inserttotalframenumber {15}}
+\headcommand {\slideentry {3}{2}{2}{31/34}{Semanthics of CTL}{0}}
+\headcommand {\beamer@framepages {31}{34}}
+\headcommand {\slideentry {3}{2}{3}{35/36}{Semanthics of CTL}{0}}
+\headcommand {\beamer@framepages {35}{36}}
+\headcommand {\beamer@partpages {1}{36}}
+\headcommand {\beamer@subsectionpages {30}{36}}
+\headcommand {\beamer@sectionpages {10}{36}}
+\headcommand {\beamer@documentpages {36}}
+\headcommand {\def \inserttotalframenumber {16}}

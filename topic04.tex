@@ -1,8 +1,20 @@
 \subsection{Semanthics of CTL}
 \begin{frame}{Semanthics}
 	\framesubtitle{Definition of model}
-	Different from usual logics, CTL formulas are interpreted by a transition system.
-	\begin{definition}
-		A model
-	\end{definition}
+	Different from usual logics, CTL formulas are interpreted by a transition system. Given an set of atoms:\pause
+	\begin{definition}[1]
+		A transition system $\M$ is a triple $\M = (S, \to, L)$ in which $S$ is a set of states, $\to$ is a binary relation over $S$ ($\to \subseteq S\times S$) and $L: S \to \mathcal{P}(Atoms)$ is a labelling function.
+	\end{definition}\pause
+	\begin{definition}[2]
+		A model is a duple $\M,s$ in which $\M$ is a transition system and $s$ is a state.
+	\end{definition}\pause
+	
+	{\bf Notation:} we will use $\M,s\vDash \varphi$ to say that the model $\M,s$ satisfies the formula $\varphi$
+\end{frame}
+
+\begin{frame}{Semanthics}
+	\framesubtitle{Satisfaction}
+	\begin{itemize}
+		\item $\M,s \vDash \top$ and $\M,s \not\vDash \bot$ \pause
+	\end{itemize}
 \end{frame}
