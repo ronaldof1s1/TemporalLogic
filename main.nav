@@ -32,15 +32,15 @@
 \headcommand {\beamer@framepages {10}{10}}
 \headcommand {\slideentry {3}{1}{2}{11/13}{Syntax of CTL}{0}}
 \headcommand {\beamer@framepages {11}{13}}
-\headcommand {\slideentry {3}{1}{3}{14/14}{Syntax of CTL}{0}}
-\headcommand {\beamer@framepages {14}{14}}
-\headcommand {\beamer@subsectionentry {0}{3}{2}{15}{Semanthics of CTL}}\headcommand {\beamer@subsectionpages {10}{14}}
-\headcommand {\slideentry {3}{2}{1}{15/15}{Semanthics of CTL}{0}}
-\headcommand {\beamer@framepages {15}{15}}
-\headcommand {\slideentry {3}{2}{2}{16/16}{Semanthics of CTL}{0}}
-\headcommand {\beamer@framepages {16}{16}}
-\headcommand {\beamer@partpages {1}{16}}
-\headcommand {\beamer@subsectionpages {15}{16}}
-\headcommand {\beamer@sectionpages {10}{16}}
-\headcommand {\beamer@documentpages {16}}
+\headcommand {\slideentry {3}{1}{3}{14/18}{Syntax of CTL}{0}}
+\headcommand {\beamer@framepages {14}{18}}
+\headcommand {\beamer@subsectionentry {0}{3}{2}{19}{Semanthics of CTL}}\headcommand {\beamer@subsectionpages {10}{18}}
+\headcommand {\slideentry {3}{2}{1}{19/19}{Semanthics of CTL}{0}}
+\headcommand {\beamer@framepages {19}{19}}
+\headcommand {\slideentry {3}{2}{2}{20/20}{Semanthics of CTL}{0}}
+\headcommand {\beamer@framepages {20}{20}}
+\headcommand {\beamer@partpages {1}{20}}
+\headcommand {\beamer@subsectionpages {19}{20}}
+\headcommand {\beamer@sectionpages {10}{20}}
+\headcommand {\beamer@documentpages {20}}
 \headcommand {\def \inserttotalframenumber {13}}

@@ -3,8 +3,8 @@
 \begin{frame}{Syntax}
 	\framesubtitle{Definition}
 	The syntax of CTL consists on the syntax of temporal logic plus some path operators. The class of formulas can be defined in Backus-Naur form. If $\phi$ is a formula: \pause
-	$$\phi ::= \bot \; | \; \top \; | \; p \; | \; \neg \phi \; | \; \phi \land \phi \; | \; \phi \lor \phi \; | \; \phi \to \phi \; | \; \phi \leftrightarrow \phi \; | \; \AX \phi \; | \; \EX \phi \; | \; \AF \phi \; |$$
-	$$\EF \phi \; | \; \AG \phi \; | \; \EG \phi \; | \; \A[\phi \U \phi] \; | \; \E[\phi \U \phi]$$\pause
+	$$\phi ::= \bot \; | \; \top \; | \; p \; | \; \neg \phi \; | \; \phi \land \phi \; | \; \phi \lor \phi \; | \; \phi \to \phi \; | \; \AX \phi \; | \; \EX \phi \; | $$
+	$$\AF \phi \; | \; \EF \phi \; | \; \AG \phi \; | \; \EG \phi \; | \; \A[\phi \U \phi] \; | \; \E[\phi \U \phi]$$\pause
 	
 	With $p$ as a literal (atomic formula), \AX, \EX, \AF, \EF, \AG \, e \EG \, unary operators.
 	
@@ -12,7 +12,22 @@
 
 \begin{frame}{Syntax}
 	\framesubtitle{Intuition}
-	content...
+	The propositional operators: $\neg, \lor, \land, \to$ have the same meaning of in the propositional logic.\pause
+	
+	The temporal operators goes as follows: \pause
+	\begin{itemize}
+		\item 
+		{
+			\A
+			\pause
+		}
+		\item 
+		{
+			\E
+			\pause
+		}
+	\end{itemize}
+	
 \end{frame}
 \subsection{Semanthics of CTL}
 \begin{frame}{Semanthics}

@@ -7,4 +7,4 @@
 \beamer@subsectionintoc {2}{2}{Intuition}{8}{0}{2}
 \beamer@sectionintoc {3}{How to communicate}{10}{0}{3}
 \beamer@subsectionintoc {3}{1}{Syntax of CTL}{10}{0}{3}
-\beamer@subsectionintoc {3}{2}{Semanthics of CTL}{15}{0}{3}
+\beamer@subsectionintoc {3}{2}{Semanthics of CTL}{19}{0}{3}
