@@ -74,7 +74,27 @@
 	
 \end{frame}
 
-\subsection{Semanthics of CTL}
-\begin{frame}{Semanthics}
-	
+\begin{frame}{Examples}
+	\begin{itemize}
+		\item
+		{
+			Examples of well-formed formulas:
+			\begin{itemize}
+				\item $\A\G (p \lor \E\F q)$ \pause
+				\item $\A\X (q \to \E[(p\lor q) \U r])$ \pause
+				\item $\E\F\E\G p \to \A\F r$ Note that this is binded as $(\E\F\E\G p) \to \A\F r$, not as $\E\F\E\G (p \to \A\F r)$
+			\end{itemize}
+			\pause
+		}
+		\item
+		{
+			Example of formulas that are not well-formed:
+			\begin{itemize}
+				\item $\A\neg\G \neg p$ \pause
+				\item $F[p\U s]$ \pause
+				\item $A[p\U s \land q \U s]$
+			\end{itemize}
+		}
+	\end{itemize}
 \end{frame}
+
