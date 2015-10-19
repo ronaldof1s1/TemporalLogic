@@ -1,4 +1,0 @@
-\beamer@endinputifotherversion {3.33pt}
-\select@language {english}
-\beamer@sectionintoc {1}{In previous chapters...}{3}{0}{1}
-\beamer@subsectionintoc {1}{1}{Temporal Logic}{3}{0}{1}
