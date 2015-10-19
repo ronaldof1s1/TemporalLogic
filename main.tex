@@ -1,0 +1,74 @@
+\documentclass{beamer}
+
+\mode<presentation>
+{
+  \usetheme{default}      
+  \usecolortheme{default}
+  \usefonttheme{default}  
+  \setbeamertemplate{navigation symbols}{}
+  \setbeamertemplate{caption}[numbered]
+} 
+
+\usepackage[english]{babel}
+\usepackage[utf8x]{inputenc}
+
+\title[presentationTemplate]{Computation Tree Logic}
+\author{Luis Tertulino \& Ronaldo Silveira}
+\date{\today}
+
+\usepackage{amsthm, amssymb, amsfonts, amsmath}
+\usepackage{graphicx}
+\usepackage{tikz}
+\usetikzlibrary{calc,shapes}
+\usepackage{enumitem}
+\usepackage{mathtools}
+\usepackage{mathrsfs}
+\usepackage{tikz-cd}
+%usepackage{lstlist}
+
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\p}{\mathbb{P}}
+\newcommand{\E}{\mathbb{E}}
+
+\AtBeginSubsection[]
+{
+  \begin{frame}
+    \tableofcontents[currentsection,currentsubsection]
+  \end{frame}
+}
+
+
+\begin{document}
+
+\begin{frame}
+	\titlepage
+\end{frame}
+
+\begin{frame}
+\tableofcontents
+\end{frame}
+
+\section{In previous chapters...}
+\subsection{Temporal Logic}
+
+\input{topic01}
+\input{topic02}
+\input{topic03}
+\input{topic04}
+\input{topic05}
+\input{topic06}
+\input{topic07}
+\input{topic08}
+\input{topic09}
+\input{topic10}
+\input{topic11}
+\input{topic12}
+\input{topic13}
+\input{topic14}
+\input{topic15}
+
+\end{document}
