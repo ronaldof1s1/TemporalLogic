@@ -14,21 +14,49 @@
 	\framesubtitle{Intuition}
 	The propositional operators: $\neg, \lor, \land, \to$ have the same meaning of in the propositional logic.\pause
 	
-	The temporal operators goes as follows: \pause
+	The temporal operators can be read (if $\varphi$ is a formula) as follows: \pause
 	\begin{itemize}
 		\item 
 		{
-			\A
+			$\A \phi$: $\varphi$ is true in all possible paths;
 			\pause
 		}
 		\item 
 		{
-			\E
+			$\E \phi$: $\varphi$ exists a path in which $\phi$ is true;
 			\pause
 		}
 	\end{itemize}
 	
+	The path-specific operators can be read, considering $\varphi$ and $\psi$ formulas, as: \pause
+	\begin{itemize}
+		\item 
+		{
+			$\X \phi:$ $\varphi$ is  true until next state;
+			\pause
+		}
+		\item 
+		{
+			$\F \varphi:$ There is some state in the future where $\varphi$ is true;
+			\pause
+		}
+		\item
+		{
+			$\G \varphi: $ Globally (in all future states) $\varphi$ is true;
+			\pause
+		}
+		\item
+		{
+			$\varphi \U \psi$: $\varphi$ is true at least until $\psi$ becomes true;	
+		}
+	\end{itemize}
+	
 \end{frame}
+
+\begin{frame}
+	Notice that, in CTL, the combination of path specific operators and temporal operators are atomic, i.e., \A\F is one operator that can be read as "In all paths in the future there is some state where..."
+\end{frame}
+
 \subsection{Semanthics of CTL}
 \begin{frame}{Semanthics}
 	
