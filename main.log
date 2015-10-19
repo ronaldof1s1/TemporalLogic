@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2014) (preloaded format=pdflatex 2015.10.13)  19 OCT 2015 14:42
+This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2014) (preloaded format=pdflatex 2015.10.13)  19 OCT 2015 14:51
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1151,28 +1151,28 @@ LaTeX Font Warning: Font shape `OT1/cmss/m/n' in size <4> not available
 [10
 
 ]
-LaTeX Font Info:    Try loading font information for U+msa on input line 10.
+LaTeX Font Info:    Try loading font information for U+msa on input line 11.
  (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 10.
+LaTeX Font Info:    Try loading font information for U+msb on input line 11.
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-LaTeX Font Info:    Try loading font information for U+rsfs on input line 10.
+LaTeX Font Info:    Try loading font information for U+rsfs on input line 11.
 
 (/usr/share/texlive/texmf-dist/tex/latex/jknapltx/ursfs.fd
 File: ursfs.fd 1998/03/24 rsfs font definition file (jk)
 )
 LaTeX Font Info:    Try loading font information for OT1+mathkerncmss on input 
-line 10.
+line 11.
 
 (/usr/share/texlive/texmf-dist/tex/latex/sansmathaccent/ot1mathkerncmss.fd
 File: ot1mathkerncmss.fd 2013/03/27 Fontinst v1.933 font definitions for OT1/ma
 thkerncmss.
 )
-Overfull \hbox (9.11812pt too wide) detected at line 10
+Overfull \hbox (9.11812pt too wide) detected at line 11
 \OML/cmm/m/it/10.95 ^^^ \OT1/cmss/m/n/10.95 ::= \OMS/cmsy/m/n/10.95 ? j > j \OT
 1/mathkerncmss/m/sl/10.95 p \OMS/cmsy/m/n/10.95 j :\OML/cmm/m/it/10.95 ^^^ \OMS
 /cmsy/m/n/10.95 j \OML/cmm/m/it/10.95 ^^^ \OMS/cmsy/m/n/10.95 ^ \OML/cmm/m/it/1
@@ -1184,18 +1184,47 @@ m/m/it/10.95 ^^^ \OMS/cmsy/m/n/10.95 j []\OML/cmm/m/it/10.95 ^^^ \OMS/cmsy/m/n/
 10.95 j []\OML/cmm/m/it/10.95 ^^^ \OMS/cmsy/m/n/10.95 j
  []
 
-(/usr/share/texlive/texmf-dist/tex/latex/ucs/data/uni-0.def
-File: uni-0.def 2013/05/13 UCS: Unicode data U+0000..U+00FF
-) [11
+[11
 
-] (./main.toc)
+]
+Overfull \hbox (9.11812pt too wide) detected at line 11
+\OML/cmm/m/it/10.95 ^^^ \OT1/cmss/m/n/10.95 ::= \OMS/cmsy/m/n/10.95 ? j > j \OT
+1/mathkerncmss/m/sl/10.95 p \OMS/cmsy/m/n/10.95 j :\OML/cmm/m/it/10.95 ^^^ \OMS
+/cmsy/m/n/10.95 j \OML/cmm/m/it/10.95 ^^^ \OMS/cmsy/m/n/10.95 ^ \OML/cmm/m/it/1
+0.95 ^^^ \OMS/cmsy/m/n/10.95 j \OML/cmm/m/it/10.95 ^^^ \OMS/cmsy/m/n/10.95 _ \O
+ML/cmm/m/it/10.95 ^^^ \OMS/cmsy/m/n/10.95 j \OML/cmm/m/it/10.95 ^^^ \OMS/cmsy/m
+/n/10.95 ! \OML/cmm/m/it/10.95 ^^^ \OMS/cmsy/m/n/10.95 j \OML/cmm/m/it/10.95 ^^
+^ \OMS/cmsy/m/n/10.95 $ \OML/cmm/m/it/10.95 ^^^ \OMS/cmsy/m/n/10.95 j []\OML/cm
+m/m/it/10.95 ^^^ \OMS/cmsy/m/n/10.95 j []\OML/cmm/m/it/10.95 ^^^ \OMS/cmsy/m/n/
+10.95 j []\OML/cmm/m/it/10.95 ^^^ \OMS/cmsy/m/n/10.95 j
+ []
+
 [12
 
-] [13
+]
+Overfull \hbox (9.11812pt too wide) detected at line 11
+\OML/cmm/m/it/10.95 ^^^ \OT1/cmss/m/n/10.95 ::= \OMS/cmsy/m/n/10.95 ? j > j \OT
+1/mathkerncmss/m/sl/10.95 p \OMS/cmsy/m/n/10.95 j :\OML/cmm/m/it/10.95 ^^^ \OMS
+/cmsy/m/n/10.95 j \OML/cmm/m/it/10.95 ^^^ \OMS/cmsy/m/n/10.95 ^ \OML/cmm/m/it/1
+0.95 ^^^ \OMS/cmsy/m/n/10.95 j \OML/cmm/m/it/10.95 ^^^ \OMS/cmsy/m/n/10.95 _ \O
+ML/cmm/m/it/10.95 ^^^ \OMS/cmsy/m/n/10.95 j \OML/cmm/m/it/10.95 ^^^ \OMS/cmsy/m
+/n/10.95 ! \OML/cmm/m/it/10.95 ^^^ \OMS/cmsy/m/n/10.95 j \OML/cmm/m/it/10.95 ^^
+^ \OMS/cmsy/m/n/10.95 $ \OML/cmm/m/it/10.95 ^^^ \OMS/cmsy/m/n/10.95 j []\OML/cm
+m/m/it/10.95 ^^^ \OMS/cmsy/m/n/10.95 j []\OML/cmm/m/it/10.95 ^^^ \OMS/cmsy/m/n/
+10.95 j []\OML/cmm/m/it/10.95 ^^^ \OMS/cmsy/m/n/10.95 j
+ []
 
-]) (./topic04.tex) (./topic05.tex) (./topic06.tex) (./topic07.tex)
-(./topic08.tex) (./topic09.tex) (./topic10.tex) (./topic11.tex) (./topic12.tex)
-(./topic13.tex) (./topic14.tex) (./topic15.tex)
+[13
+
+] [14
+
+] (./main.toc) [15
+
+] [16
+
+]) (./topic04.tex) (./topic05.tex)
+(./topic06.tex) (./topic07.tex) (./topic08.tex) (./topic09.tex) (./topic10.tex)
+(./topic11.tex) (./topic12.tex) (./topic13.tex) (./topic14.tex) (./topic15.tex)
 \tf@nav=\write6
 \openout6 = `main.nav'.
 
@@ -1207,18 +1236,12 @@ File: uni-0.def 2013/05/13 UCS: Unicode data U+0000..U+00FF
 
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 82.
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 82.
- (./main.aux)
+(./main.aux)
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 82.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 82.
+Package rerunfilecheck Info: File `main.out' has not changed.
+(rerunfilecheck)             Checksum: D92F4091A701A3A5259E9EFF21472ECB;480.
 
-
-Package rerunfilecheck Warning: File `main.out' has changed.
-(rerunfilecheck)                Rerun to get outlines right
-(rerunfilecheck)                or use package `bookmark'.
-
-Package rerunfilecheck Info: Checksums for `main.out':
-(rerunfilecheck)             Before: 48AB1041EEACA0A7E72CF36174929C8B;166
-(rerunfilecheck)             After:  D2404F957E40C5726285DC26D681312D;480.
 
 LaTeX Font Warning: Size substitutions with differences
 (Font)              up to 1.0pt have occurred.
@@ -1226,13 +1249,13 @@ LaTeX Font Warning: Size substitutions with differences
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 82.
  ) 
 Here is how much of TeX's memory you used:
- 24171 strings out of 493408
- 496697 string characters out of 6144156
- 603143 words of memory out of 5000000
- 26955 multiletter control sequences out of 15000+600000
+ 23718 strings out of 493408
+ 491958 string characters out of 6144156
+ 605149 words of memory out of 5000000
+ 26499 multiletter control sequences out of 15000+600000
  11694 words of font info for 45 fonts, out of 8000000 for 9000
  953 hyphenation exceptions out of 8191
- 58i,11n,84p,384b,540s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 58i,11n,84p,384b,380s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></us
 r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmss10.pfb></usr/shar
 e/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmss12.pfb></usr/share/texl
@@ -1240,10 +1263,10 @@ ive/texmf-dist/fonts/type1/public/amsfonts/cm/cmss9.pfb></usr/share/texlive/tex
 mf-dist/fonts/type1/public/amsfonts/cm/cmssi10.pfb></usr/share/texlive/texmf-di
 st/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fon
 ts/type1/public/amsfonts/cm/cmtt10.pfb>
-Output written on main.pdf (13 pages, 72279 bytes).
+Output written on main.pdf (16 pages, 77133 bytes).
 PDF statistics:
- 157 PDF objects out of 1000 (max. 8388607)
- 127 compressed objects within 2 object streams
- 35 named destinations out of 1000 (max. 500000)
- 67 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 220 PDF objects out of 1000 (max. 8388607)
+ 187 compressed objects within 2 object streams
+ 41 named destinations out of 1000 (max. 500000)
+ 107 words of extra memory for PDF output out of 10000 (max. 10000000)
 
