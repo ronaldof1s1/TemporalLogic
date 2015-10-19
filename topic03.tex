@@ -3,10 +3,10 @@
 \begin{frame}{Syntax}
 	\framesubtitle{Definition}
 	The syntax of CTL consists on the syntax of temporal logic plus some path operators. The class of formulas can be defined in Backus-Naur form. If $\phi$ is a formula: \pause
-	$$\phi ::= \bot \; | \; \top \; | \; p \; | \; \neg \phi \; | \; \phi \land \phi \; | \; \phi \lor \phi \; | \; \phi \to \phi \; | \; \AX \phi \; | \; \EX \phi \; | $$
-	$$\AF \phi \; | \; \EF \phi \; | \; \AG \phi \; | \; \EG \phi \; | \; \A[\phi \U \phi] \; | \; \E[\phi \U \phi]$$\pause
+	$$\phi ::= \bot \; | \; \top \; | \; p \; | \; \neg \phi \; | \; \phi \land \phi \; | \; \phi \lor \phi \; | \; \phi \to \phi \; | \; \A\X \phi \; | \; \E\X \phi \; | $$
+	$$\A\F \phi \; | \; \E\F \phi \; | \; \A\G \phi \; | \; \E\G \phi \; | \; \A[\phi \U \phi] \; | \; \E[\phi \U \phi]$$\pause
 	
-	With $p$ as a literal (atomic formula), \AX, \EX, \AF, \EF, \AG \, e \EG \, unary operators.
+	With $p$ as a literal (atomic formula), \A\X, \E\X, \A\F, \E\F, \A\G \, e \E\G \, unary operators.
 	
 \end{frame}
 
@@ -53,8 +53,25 @@
 	
 \end{frame}
 
-\begin{frame}
-	Notice that, in CTL, the combination of path specific operators and temporal operators are atomic, i.e., \A\F is one operator that can be read as "In all paths in the future there is some state where..."
+\begin{frame}{Syntax}
+	\framesubtitle{Notes}
+	\begin{itemize}
+		\item 
+		{
+			Notice that, in CTL, the combination of path specific operators and temporal operators are atomic, i.e., \A\F \; is a operator that can be read as "In all paths in the future there is some state where..."
+		}
+		
+		\item 
+		{
+			Notice as well that the binary operators $\A[\varphi\U\psi]$ and $\E[\varphi\U\psi]$ can be represented as \A\U
+		}
+		
+		\item 
+		{
+			We assume that, similarly to the $\neg$ operator, the "new" unary operators ($\A\X, \E\X, \A\F, \E\F, \A\G $, and $ \E\G $) have the first precedence. Next comes the $\land$ and $\lor$ operators. And at last the $\to$, $\A\U$ and $\E\U$
+		}
+	\end{itemize}
+	
 \end{frame}
 
 \subsection{Semanthics of CTL}
