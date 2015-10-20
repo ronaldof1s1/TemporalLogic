@@ -44,6 +44,6 @@
 		\item $M,s, \vDash \A\F \varphi$ iff for all paths $s_1 \to s_2 \to s_3 \to ...$ in which $s = s_1$, exists $s_i$, $M, s_i \vDash \varphi$. Thus, $\A\F$ says: ``In all possible paths from now on, in some next state...''\pause
 		\item $M,s, \vDash \E\F \varphi$ iff exists some path $s_1 \to s_2 \to s_3 \to ...$ in which $s = s_1$, that exists $s_i$, $M, s_i \vDash \varphi$. Thus, $\E\F$ says: ``In some path from now on, in some next state...''\pause
 		\item $M,s, \vDash \A[\varphi_1 \U \varphi_2]$ iff for all paths $s_1 \to s_2 \to s_3 \to ...$ in which $s = s_1$, this path satisfies $\varphi_1 \U \varphi_2$, i.e., exists $s_i$ in the path such that $\M, s_i \vDash \varphi_2$ and, for all $j < i$, $M, s_j \vDash \varphi_1$. Thus, $\A\U$ says: ``For all paths from now on, until some state...''\pause
-		\item $M,s, \vDash \E[\varphi_1 \U \varphi_2]$ iff exists some path $s_1 \to s_2 \to s_3 \to ...$ in which $s = s_1$, this path satisfies $\varphi_1 \U \varphi_2$. Thus, $\E\U$ says: ``In some path from now on, until some state...''\pause
+		\item $M,s, \vDash \E[\varphi_1 \U \varphi_2]$ iff exists some path $s_1 \to s_2 \to s_3 \to ...$ in which $s = s_1$, this path satisfies $\varphi_1 \U \varphi_2$. Thus, $\E\U$ says: ``In some path from now on, until some state...''
 	\end{itemize}
 \end{frame}
