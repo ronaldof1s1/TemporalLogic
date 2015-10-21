@@ -3,10 +3,17 @@
 	\begin{itemize}
 		\item 
 		{
-			
-			"It's possible to get to a state where something has started but it's not ready": $\E\F(started \land \neg ready)$ 
-		
-			
+			``It's possible to get to a state where something has started but it's not ready'': $\E\F(started \land \neg ready)$ 
+			\pause
+		}
+		\item
+		{
+			``A certain process is enabled infinitely often on every computation path'': $\A\G(\A\F enabled)$	
+			\pause
+		}
+		\item
+		{
+			``An upwards travelling lift at the second floor does not change its direction when it has passengers wishing to go to the fifth floor'': $\A\G(floor2 \land directionUp \land button5 \to \A[directionUp \U floor5])$
 		}
 	\end{itemize}
 \end{frame}
