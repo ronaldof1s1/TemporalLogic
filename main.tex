@@ -1,34 +1,45 @@
-\documentclass{beamer}
+\documentclass[notes=show]{beamer}
 
-\mode<presentation>
-{
-  \usetheme{default}      
-  \usecolortheme{default}
-  \usefonttheme{default}  
-  \setbeamertemplate{navigation symbols}{}
-  \setbeamertemplate{caption}[numbered]
-  \setbeamertemplate{footline}{\insertframenumber/\inserttotalframenumber}
-  \setbeamerfont{footline}{series=\bfseries}
-  \setbeamerfont{footline}{size=\large}
-  %\setbeamerfont{page number in head/foot}{size=\large}
-} 
 
 \usepackage[english]{babel}
 \usepackage[utf8x]{inputenc}
 
-\title[presentationTemplate]{Computation Tree Logic}
-\author{Luis Tertulino \& Ronaldo Silveira}
-\date{\today}
 
 \usepackage{amsthm, amssymb, amsfonts, amsmath}
 \usepackage{graphicx}
 \usepackage{tikz}
 \usetikzlibrary{calc,shapes}
-\usepackage{enumitem}
+%\usepackage{enumitem}
 \usepackage{mathtools}
 \usepackage{mathrsfs}
 \usepackage{tikz-cd}
-%usepackage{lstlist}
+%\usepackage{listing}
+
+%\usepackage{beamerthemeshadow}
+
+
+\mode<presentation>
+{
+  \usetheme{Berkeley}      
+  \usecolortheme{seagull}
+%  \usefonttheme{default}  
+  \setbeamertemplate{navigation symbols}{}
+  \setbeamertemplate{caption}[numbered]
+  \setbeamertemplate{footline}
+  {
+  	\begin{beamercolorbox}[sep=0.2em,wd=\paperwidth,leftskip=0.5cm,rightskip=0.2cm]{footlinecolor}
+	  	\hfill\insertframenumber/\inserttotalframenumber		
+  	\end{beamercolorbox}
+  }
+  \setbeamercolor{footlinecolor}{bg=lightgray}
+  \setbeamerfont{footline}{series=\bfseries}
+  \setbeamerfont{footline}{size=\large}
+  %\setbeamertemplate{itemize items}{$>>$}
+} 
+
+\title{Computation Tree Logic}
+\author{Luis Tertulino \& Ronaldo Silveira}
+\date{\today}
 
 \newcommand{\C}{\mathbb{C}}
 \newcommand{\R}{\mathbb{R}}
@@ -44,12 +55,12 @@
 \newcommand{\U}{\texttt{U}}
 \newcommand{\M}{\mathcal{M}}
 
-\AtBeginSubsection[]
-{
-  \begin{frame}
-    \tableofcontents[currentsection,currentsubsection]
-  \end{frame}
-}
+%\AtBeginSubsection[]
+%{
+%  \begin{frame}
+%    \tableofcontents[currentsection,currentsubsection]
+%  \end{frame}
+%}
 
 
 \begin{document}
