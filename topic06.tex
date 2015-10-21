@@ -1,2 +1,41 @@
 \section{More about semantics}
 \subsection{Equivalences}
+
+\begin{frame}{Equivalences}
+	\begin{definition}
+		Two CTL formulas $\varphi$ and $\psi$ are said to be \alert{semantically	equivalent} if any state in any model which satisfies one of them also satisfies the other; 
+	\end{definition}\pause
+	\textbf{Notation:} we denote the equivalence of $\varphi$ and $\psi$ by $\varphi \equiv \psi$
+\end{frame}
+
+\begin{frame}{Example of equivalences}
+    Let $\varphi$ be an arbitrary CTL formula.
+        
+    \begin{itemize}
+        \item
+        {
+            $\neg \A\F \varphi \equiv \E\G \neg \varphi $    
+        }
+        \item
+        {
+            $\neg \E\F \varphi \equiv \A\G \neg \varphi$    
+        }
+        \item
+        {
+            $\neg \A\X \varphi \equiv \E\X \neg \varphi$    
+        }
+        \item
+        {
+            $\A\F\varphi \equiv \A[\top \U\varphi]$    
+        }
+        \item
+        {
+            $\E\F \varphi \equiv \E[\top \U\varphi]$    
+        }
+    \end{itemize}
+\end{frame}
+
+\begin{frame}{Minimum set of CTL connectives}
+    Because of the equivalences shown and the ones in propositional logic, we can have some minimum sets of conectives for the CTL syntax. One of them is defined in Extended Backus-Naur formalism below:
+    $$\phi ::=  \top \; | \; p \; | \; \neg \phi \; | \; \phi \to \phi \; | \; \A\X \phi \; | \;  \A[\phi\U\phi] \; | \; \E[\phi\U\phi]$$
+\end{frame}

@@ -21,19 +21,35 @@
 \mode<presentation>
 {
   \usetheme{Berkeley}      
+  %\beamer@headheight = 1.5cm\baselineskip
+  \setbeamerfont{section in sidebar}{size=\fontsize{2}{4}\selectfont}
+  \setbeamerfont{subsection in sidebar}{size=\fontsize{2}{4}\selectfont}
+  \setbeamerfont{subsubsection in sidebar}{size=\fontsize{2}{4}\selectfont}
+  \setbeamerfont{author in sidebar}{size=\fontsize{1}{3}\selectfont}
   \usecolortheme{seagull}
 %  \usefonttheme{default}  
-  \setbeamertemplate{navigation symbols}{}
+  %\setbeamertemplate{navigation symbols}{}
+%  \setbeamercolor{headline}{\height=2.5cm}
+  
+  
+  \setbeamerfont{frametitle}{size=\large}
+  \setbeamertemplate{headline}
+  {
+	\begin{beamercolorbox}[sep=0.2cm, ht=1.5cm]{headlinecolor}
+	\end{beamercolorbox}	
+  }
+  \setbeamercolor{headlinecolor}{bg=lightgray}
+  
   \setbeamertemplate{caption}[numbered]
   \setbeamertemplate{footline}
   {
-  	\begin{beamercolorbox}[sep=0.2em,wd=\paperwidth,leftskip=0.5cm,rightskip=0.2cm]{footlinecolor}
+  	\begin{beamercolorbox}[sep=0.1em,wd=\paperwidth,leftskip=0.5cm,rightskip=0.2cm]{footlinecolor}
 	  	\hfill\insertframenumber/\inserttotalframenumber		
   	\end{beamercolorbox}
   }
   \setbeamercolor{footlinecolor}{bg=lightgray}
   \setbeamerfont{footline}{series=\bfseries}
-  \setbeamerfont{footline}{size=\large}
+  \setbeamerfont{footline}{size=\tiny}
   %\setbeamertemplate{itemize items}{$>>$}
 } 
 
@@ -73,8 +89,6 @@
 \tableofcontents
 \end{frame}
 
-\section{In previous chapters...}
-\subsection{Temporal Logic}
 
 \input{topic01}
 \input{topic02}
