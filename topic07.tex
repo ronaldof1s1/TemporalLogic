@@ -1,0 +1,55 @@
+\section{Improving our language}
+\begin{frame}{That's all we need?}
+    Even if CTL allow explicit quantification over paths, it cannot allow some expressions to be formed. For example, we cannot say, as in LTL: "All paths in which have $p$ on them, also have $q$ on them".
+
+    This expression can be translated in LTL as follows: 
+    $$\F p \to \F q$$
+\end{frame}
+
+\begin{frame}{That's all we need?}
+    We can try expressing it as $\A\F p \to \A\F q$ but it does not have the same meaning. This one statement means "If all paths have a p along them, then all paths have a q along then"\pause
+    
+    We can try to translate it as $\A\G(p\to\A\F q)$ which is closer, but not exactly the same. This one means "for all paths, in all states on the future, if they hold $p$ then, all paths will eventualy hold $q$"
+\end{frame}
+
+\begin{frame}{Presenting CTL*}
+    For this, we can extend the CTL by dropping the constraint that every temporal operator (\X, \U, \F, \G) has to be associated with an unique path quantifier (\A, \E). \pause
+    
+    This allows us to generate some statements:
+\end{frame}
+
+\begin{frame}{Statements only possible with CTL*}
+        \begin{itemize}
+            \item
+            {
+                ``In all possible paths, $q$ is true until $r$ is true or $p$ is true until $r$ is true'': $\A[q \U r \lor p \U r]$
+                \pause
+            }
+            \item
+            {
+                ``There is a path in which $p$ eventually occurring will occur in all states'': $\E[\G\F p]$
+                \pause
+            }
+            \item
+            {
+                ``In all paths, $p$ will occur in the next state or in the next of the next'': $\A[\X p \lor \X\X p]$
+                \pause                
+            }
+        \end{itemize}
+\end{frame}
+
+\begin{frame}{CTL* syntax}
+    The syntax of CTL* can be defined with the BNF bellow:
+    
+    	$$\phi ::= \bot \; | \; \top \; | \; p \; | \; \neg \phi \; | \; \phi \land \phi \; | \; \phi \lor \phi \; | \; \phi \to \phi \; | \; \A[\alpha] \; | \; \E[\alpha] \; | $$
+        $$\alpha ::= \phi |  \; \neg \alpha \; | \; \alpha \land \alpha \; | \; \alpha \lor \alpha \; | \; \alpha \to \alpha \; | \; \alpha \U \alpha \; | \; \G \alpha \; | \; \F \alpha \; | \; \X\alpha |$$
+        
+        With the same meanings of each operator.
+\end{frame}
+
+\begin{frame}{LTL $\subset$ CTL* and CTL $\subset$ CTL*}
+    Although we don't define path operators to LTL we can assume that it consider in all paths. Therefore, we can say that a formula $\phi$ in LTL is a formula $\A[\phi]$ in CTL*;\pause
+    
+    For CTL, it is trivial;
+\end{frame}
+
