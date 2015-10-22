@@ -6,7 +6,7 @@
 		A \alert{transition system} $\M$ is a triple $\M = (S, \to, L)$ in which $S$ is a set of states, $\to$ is a binary relation over $S$ ($\to \subseteq S\times S$) and $L: S \to \mathcal{P}(Atoms)$ is a labelling function.
 	\end{definition}\pause
 	\begin{definition}[2]
-		A \alert{model} is a duple $\M,s$ in which $\M$ is a transition system and $s$ is a state.
+		A \alert{model} is a duple $\M,s$ in which $\M$ is a transition system and $s \in S$ is a state of the transition system.
 	\end{definition}\pause
 	
 	{\bf Notation:} we will use $\M,s\vDash \varphi$ to denote that the model $\M,s$ satisfies the formula $\varphi$
@@ -32,8 +32,8 @@
 	\begin{itemize}
 		\item $\M,s \vDash \A\X \varphi$ iff for all $s_1$ that $s \to s_1$ and $\M,s_1 \vDash \varphi$. Thus, $\A\X$ says: ``in every next state...''\pause
 		\item $\M,s \vDash \E\X \varphi$ iff exists $s_1$ that $s \to s_1$ and $M,s_1 \vDash \varphi$. Thus, $\E\X$ says: ``in some next state...''\pause
-		\item $M,s, \vDash \A\G \varphi$ iff for all paths $s_1 \to s_2 \to s_3 \to ...$ in which $s = s_1$, for all $s_i$, $M, s_i \vDash \varphi$. Thus, $\A\G$ says: ``In all possible paths from now on in all next states...''\pause
-		\item $M,s, \vDash \A\G \varphi$ iff exists some path $s_1 \to s_2 \to s_3 \to ...$ in which $s = s_1$, for all $s_i$, $M, s_i \vDash \varphi$ Thus, $\E\G$ says: ``Exists a path from now on in all next states...''\pause
+		\item $\M,s, \vDash \A\G \varphi$ iff for all paths $s_1 \to s_2 \to s_3 \to ...$ in which $s = s_1$, for all $s_i$, $\M, s_i \vDash \varphi$. Thus, $\A\G$ says: ``In all possible paths from now on in all next states...''\pause
+		\item $\M,s, \vDash \A\G \varphi$ iff exists some path $s_1 \to s_2 \to s_3 \to ...$ in which $s = s_1$, for all $s_i$, $\M, s_i \vDash \varphi$ Thus, $\E\G$ says: ``Exists a path from now on in all next states...''
 	\end{itemize}
 \end{frame}
 
@@ -41,9 +41,15 @@
 	\framesubtitle{Satisfaction}
 	Take an arbitrary model $\M$. Let $s, s_1, s_2, s_3$ be states in $S$. Let $\varphi, \varphi_1, \varphi_2$ be well-formed formulas of CTL. And let $p$ be an atom. The satisfaction of CTL formulas can be defined as follows:
 	\begin{itemize}
-		\item $M,s, \vDash \A\F \varphi$ iff for all paths $s_1 \to s_2 \to s_3 \to ...$ in which $s = s_1$, exists $s_i$, $M, s_i \vDash \varphi$. Thus, $\A\F$ says: ``In all possible paths from now on, in some next state...''\pause
-		\item $M,s, \vDash \E\F \varphi$ iff exists some path $s_1 \to s_2 \to s_3 \to ...$ in which $s = s_1$, that exists $s_i$, $M, s_i \vDash \varphi$. Thus, $\E\F$ says: ``In some path from now on, in some next state...''\pause
-		\item $M,s, \vDash \A[\varphi_1 \U \varphi_2]$ iff for all paths $s_1 \to s_2 \to s_3 \to ...$ in which $s = s_1$, this path satisfies $\varphi_1 \U \varphi_2$, i.e., exists $s_i$ in the path such that $\M, s_i \vDash \varphi_2$ and, for all $j < i$, $M, s_j \vDash \varphi_1$. Thus, $\A\U$ says: ``For all paths from now on, until some state...''\pause
-		\item $M,s, \vDash \E[\varphi_1 \U \varphi_2]$ iff exists some path $s_1 \to s_2 \to s_3 \to ...$ in which $s = s_1$, this path satisfies $\varphi_1 \U \varphi_2$. Thus, $\E\U$ says: ``In some path from now on, until some state...''
+		\item $\M,s, \vDash \A\F \varphi$ iff for all paths $s_1 \to s_2 \to s_3 \to ...$ in which $s = s_1$, exists $s_i$, $\M, s_i \vDash \varphi$. Thus, $\A\F$ says: ``In all possible paths from now on, in some next state...''\pause
+		\item $\M,s, \vDash \E\F \varphi$ iff exists some path $s_1 \to s_2 \to s_3 \to ...$ in which $s = s_1$, that exists $s_i$, $\M, s_i \vDash \varphi$. Thus, $\E\F$ says: ``In some path from now on, in some next state...''\pause
+		\item $\M,s, \vDash \A[\varphi_1 \U \varphi_2]$ iff for all paths $s_1 \to s_2 \to s_3 \to ...$ in which $s = s_1$, this path satisfies $\varphi_1 \U \varphi_2$, i.e., exists $s_i$ in the path such that $\M, s_i \vDash \varphi_2$ and, for all $j < i$, $\M, s_j \vDash \varphi_1$. Thus, $\A\U$ says: ``For all paths from now on, until some state...''
 	\end{itemize}
+\end{frame}
+\begin{frame}{Semantics}
+    \framesubtitle{Satisfaction}
+    Take an arbitrary model $\M$. Let $s, s_1, s_2, s_3$ be states in $S$. Let $\varphi, \varphi_1, \varphi_2$ be well-formed formulas of CTL. And let $p$ be an atom. The satisfaction of CTL formulas can be defined as follows:
+    \begin{itemize}
+        \item $\M,s, \vDash \E[\varphi_1 \U \varphi_2]$ iff exists some path $s_1 \to s_2 \to s_3 \to ...$ in which $s = s_1$, this path satisfies $\varphi_1 \U \varphi_2$. Thus, $\E\U$ says: ``In some path from now on, until some state...''
+    \end{itemize}
 \end{frame}
