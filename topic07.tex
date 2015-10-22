@@ -18,7 +18,8 @@
     This allows us to generate some statements:
 \end{frame}
 
-\begin{frame}{Statements only possible with CTL*}
+\begin{frame}{Presenting CTL*}
+    \framesubtitle{Statements only possible with CTL*}
         \begin{itemize}
             \item
             {
@@ -33,12 +34,12 @@
             \item
             {
                 ``In all paths, $p$ will occur in the next state or in the next of the next'': $\A[\X p \lor \X\X p]$
-                \pause                
             }
         \end{itemize}
 \end{frame}
 
-\begin{frame}{CTL* syntax}
+\begin{frame}{Presenting CTL*}
+    \framesubtitle{CTL* syntax}
     The syntax of CTL* can be defined with the BNF bellow:
     
     	$$\phi ::= \bot \; | \; \top \; | \; p \; | \; \neg \phi \; | \; \phi \land \phi \; | \; \phi \lor \phi \; | \; \phi \to \phi \; | \; \A[\alpha] \; | \; \E[\alpha] \; | $$
@@ -47,7 +48,8 @@
         With the same meanings of each operator.
 \end{frame}
 
-\begin{frame}{LTL $\subset$ CTL* and CTL $\subset$ CTL*}
+\begin{frame}{Presenting CTL*}
+    \framesubtitle{LTL $\subset$ CTL* and CTL $\subset$ CTL*}
     Although we don't define path operators to LTL we can assume that it consider in all paths. Therefore, we can say that a formula $\phi$ in LTL is a formula $\A[\phi]$ in CTL*;\pause
     
     For CTL, it is trivial;

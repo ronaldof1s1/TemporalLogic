@@ -14,43 +14,43 @@
 	\framesubtitle{Intuition}
 	The propositional operators: $\neg, \lor, \land, \to$ have the same meaning of in the propositional logic.\pause
 	
-	The temporal operators can be read (if $\varphi$ is a formula) as follows: \pause
-	\begin{itemize}
+	The path-specific operators can be read as: \pause
+    \begin{itemize}
 		\item 
 		{
-			$\A \varphi$: $\varphi$ is true in all possible paths;
+			\A: is the universal quantifier over paths. Read as: ``in all possible paths'';
 			\pause
 		}
 		\item 
 		{
-			$\E \varphi$: $\varphi$ exists a path in which $\phi$ is true;
+			\E:is the existential quantifier over paths. Read as: ``exists a path in which'';
 			\pause
 		}
 	\end{itemize}
 	
-	The path-specific operators can be read, considering $\varphi$ and $\psi$ formulas, as: \pause
+    The temporal operators, as in LTL, can be read as:
 	\begin{itemize}
-		\item 
-		{
-			$\X \varphi:$ $\varphi$ is  true until next state;
-			\pause
-		}
-		\item 
-		{
-			$\F \varphi:$ There is some state in the future where $\varphi$ is true;
-			\pause
-		}
-		\item
-		{
-			$\G \varphi: $ Globally (in all future states) $\varphi$ is true;
-			\pause
-		}
-		\item
-		{
-			$\varphi \U \psi$: $\varphi$ is true at least until $\psi$ becomes true;	
-		}
-	\end{itemize}
-	
+    	\item 
+    	{
+    		$\X$: ``in the next state'';
+    		\pause
+    	}
+    	\item 
+    	{
+    		$\F$ ``There is some state in the future (eventually)'';
+    		\pause
+    	}
+    	\item
+    	{
+    		$\G$ ``Globally (in all future states)'';
+    		\pause
+    	}
+    	\item
+    	{
+    		$\varphi \U \psi$: $\varphi$ is true at least until $\psi$ becomes true;	
+    	}
+    \end{itemize}
+
 \end{frame}
 
 \begin{frame}{Syntax}
@@ -58,20 +58,19 @@
 	\begin{itemize}
 		\item 
 		{
-			Notice that, in CTL, the combination of path specific operators and temporal operators are atomic, i.e., \A\F \; is a operator that can be read as ``In all paths in the future there is some state where...''
+			Notice that, in CTL, the combination of path specific operators and temporal operators are atomic, e.g., \A\F \; is an atomic operator that can be read as ``In all paths in the future there is some state where...'';
 			\pause
 		}
 		
 		\item 
 		{
-			Notice as well that the binary operators $\A[\varphi\U\psi]$ and $\E[\varphi\U\psi]$ can be represented as \A\U
+			Notice as well that the binary operators $\A[\varphi\U\psi]$ and $\E[\varphi\U\psi]$ can be represented as \A\U \; and \E\U, respectively;
 			\pause
 		}
 		
 		\item 
 		{
-			We assume that, similarly to the $\neg$ operator, the ``new'' unary operators ($\A\X, \E\X, \A\F, \E\F, \A\G $, and $ \E\G $) have the first precedence. Next comes the $\land$ and $\lor$ operators. And at last the $\to$, $\A\U$ and $\E\U$
-			\pause
+			We assume that, similarly to the $\neg$ operator, the ``new'' unary operators ($\A\X, \E\X, \A\F, \E\F, \A\G $, and $ \E\G $) have the first precedence. Next comes the $\land$ and $\lor$ operators. And at last the $\to$, $\A\U$ and $\E\U$;
 		}
 	\end{itemize}
 	
