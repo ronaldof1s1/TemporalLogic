@@ -1,15 +1,27 @@
 \subsection{Semantics of CTL}
+
+
+\begin{frame}{Semantics}
+    \framesubtitle{Intuition of semantics}
+    \begin{figure}
+        \includegraphics[scale=0.3]{images/tree_examples.png}
+    \end{figure}
+\end{frame}
 \begin{frame}{Semantics}
 	\framesubtitle{Definition of model}
-	Different from usual logics, CTL formulas are interpreted by a transition system. Given an set of atoms:\pause
-	\begin{definition}[1]
-		A \alert{transition system} $\M$ is a triple $\M = (S, \to, L)$ in which $S$ is a set of states, $\to$ is a binary relation over $S$ ($\to \subseteq S\times S$) and $L: S \to \mathcal{P}(Atoms)$ is a labelling function.
+	\begin{definition}
+		Let $Atoms$ be a set of atomic formulas. A \alert{transition system} or \alert{model} $\M$ is a triple $\M = (S, \to, L)$ in which $S$ is a set of states, $\to$ is a binary relation over $S$ ($\to \subseteq S\times S$) such that for every state $s\in S$, exists a $s'$ that $s \to s'$ and $L: S \to \mathcal{P}(Atoms)$ (or $L: S \to (Atoms \to \{0,1\})$) is a labelling function.
 	\end{definition}\pause
-	\begin{definition}[2]
-		A \alert{model} is a duple $\M,s$ in which $\M$ is a transition system and $s \in S$ is a state of the transition system.
-	\end{definition}\pause
-	
+    CTL formulas are satisfied by a transition system and a specific state.
+    
 	{\bf Notation:} we will use $\M,s\vDash \varphi$ to denote that the model $\M,s$ satisfies the formula $\varphi$
+\end{frame}
+
+\begin{frame}{Semantics}
+    \framesubtitle{Satisfaction}
+    \begin{definition}
+        The \alert{satisfaction} of a formula in CTL is recursive over the structure of the formula. It can be done as follows:
+    \end{definition}
 \end{frame}
 
 

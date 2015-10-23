@@ -17,3 +17,94 @@
 		}
 	\end{itemize}
 \end{frame}
+
+\begin{frame}{Examples}
+    \framesubtitle{Finite state automata}
+    \centering
+    \begin{tikzpicture}[
+    ->,>=stealth',shorten >=1pt,auto,node distance=3cm,thick,minimum size=1.6cm,
+    main node/.style={circle,draw,font=\sffamily\Large\bfseries}]
+    
+    \node[main node] (1) [label={[font=\Large]$s_0$}] {p,q};
+    \node[main node] (2) [below of=1, label={[font=\Large]below:$s_1$}] {q,r};
+    \node[main node] (3) [right of=2, label={[font=\Large]below:$s_2$}] {r};
+    
+    \path[every node/.style={font=\sffamily\small}]
+    (1) edge [bend right] node[left] {} (2)
+    edge node {} (3)
+    (2) edge [bend right] node {} (1)
+    edge node[left] {} (3)
+    (3) edge [loop right] node {} (3);
+    \end{tikzpicture}
+\end{frame}
+
+
+\begin{frame}{Examples}
+    \framesubtitle{Corresponding tree}
+    \resizebox{\textwidth}{\textheight}{
+            \begin{tikzpicture}[->,>=stealth',shorten >=1pt,auto,node distance=3cm,thick,minimum size=1.3cm,
+            main node/.style={circle,draw,font=\sffamily\Large\bfseries},
+            no border node/.style={circle,draw=white,font=\sffamily\Large\bfseries}]
+            
+            \node[main node] (1) [label={[font=\Large]$s_0$}] {p,q};
+            \node[main node] (2) [below left of=1, label={[font=\Large]$s_1$}] {q,r};
+            \node[main node] (3) [below right of=1, label={[font=\Large]$s_2$}] {r};
+            \node[main node] (4) [below left of=2, label={[font=\Large]$s_0$}] {p,q};
+            \node[main node] (5) [below right of=2, label={[font=\Large]$s_2$}] {r};
+            \node[main node] (6) [below right of=3, label={[font=\Large]$s_2$}] {r};
+            \node[main node] (7) [below left of=4, label={[font=\Large]$s_1$}] {q,r};
+            \node[main node] (8) [below right of=4, label={[font=\Large]$s_2$}] {r};
+            \node[main node] (9) [below right of=5, label={[font=\Large]$s_2$}] {r};
+            \node[no border node] (10) [below right of=6] {$\ddots$};
+            \node[no border node] (11) [below left of=7] {$\ddots$};
+            \node[no border node] (12) [below right of=7] {$\ddots$};
+            \node[no border node] (13) [below right of=8] {$\ddots$};
+            \node[no border node] (14) [below right of=9] {$\ddots$};
+            
+            \path[every node/.style={font=\sffamily\small}]
+            (1) edge node {} (2)
+            edge node {} (3)
+            (2) edge node {} (4)
+            (2) edge node {} (5)
+            (3) edge node {} (6)
+            (4) edge node {} (7)
+            edge node {} (8)
+            (5) edge node {} (9)
+            (6) edge node {} (10)
+            (7) edge node {} (11)
+            edge node {} (12)
+            (8) edge node {} (13)
+            (9) edge node {} (14);
+            \end{tikzpicture}
+    }
+    
+\end{frame}
+
+\begin{frame}{Examples}
+    Example of formulas that are satisfied by that model:
+    
+    \begin{columns}[c]
+        \begin{column}{.4\textwidth}
+            \begin{itemize}
+                \item $\M, s_0 \vDash p \land q$
+                \item $\M, s_0 \vDash \neg r$
+                \item $\M, s_0 \vDash \E\X(q\land r)$
+                \item $\M, s_0 \vDash \neg \A\X(q\land r)$
+                \item $\M, s_0 \vDash \neg \E\F(p\land q)$
+            \end{itemize}
+            \end{column}
+        \begin{column}{.6\textwidth}
+            \begin{itemize}
+                \item $\M, s_2 \vDash \E\G r$
+                \item $\M, s_0 \vDash \A\F r$
+                \item $\M, s_0 \vDash \E[(p\land q) \U r]$
+                \item $\M, s_0 \vDash \A[p \U r]$
+                \item $\M, s_0 \vDash \A\G(p \lor q \lor r \to \E\F\E\G r)$ 
+            \end{itemize}
+            
+        \end{column}
+        
+        
+    \end{columns}
+    
+\end{frame}
