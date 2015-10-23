@@ -9,14 +9,14 @@
 		}
 		\item
 		{
-			As oubvious, we use CTL formulas.
+			Obviously, we use CTL formulas.
 			\pause
 		}
 		\item
 		{
 			There are two different ways of working with model checking:\\
 			\pause
-			Given a model and a state and a formula, tells if the model and the state satisfies the formula;\\
+			Given a model, a state and a formula, tells if the model and the state satisfies the formula;\\
 			\pause
 			Given a model and a formula, returns the set of states that satisfies the formula.
 		}
@@ -25,12 +25,12 @@
 
 \begin{frame}{The CTL model-checking algorithm}
 	\framesubtitle{The labelling algorithm}
-	We present an algorithm which, given a model and a CTL formula, outputs the set of states of the model that satisfy the formula. 
+	We present an algorithm that, given a model and a CTL formula, outputs the set of states of the model that satisfy the formula. 
 \end{frame}
 
 \begin{frame}{The CTL model-checking algorithm}
 	\framesubtitle{The labelling algorithm}
-	The algorithm deals explicitly only with some of the CTL connectives; for the others, it tranforms them to their equivalent form in terms of the minimal set of connectives previously definied: $\{\bot, \neg, \land, \A\F, \E\U, \E\X \}$ 
+	The algorithm deals explicitly only with some of the CTL connectives; for the others, it transforms them to their equivalent form in terms of the minimal set of connectives previously defined: $\{\bot, \neg, \land, \A\F, \E\U, \E\X \}$ 
 \end{frame}
 
 \begin{frame}{The CTL model-checking algorithm}
@@ -55,12 +55,12 @@
 
 \begin{frame}{The CTL model-checking algorithm}
 	\framesubtitle{The labelling algorithm}
-	Suppose $\psi$ is a subformula of $\phi$ and states satisfying all the immediate subformulas of $\psi$ have already been labelled. We determine by a case analysis which states to label with $\psi$. If $\psi$ is
+	Suppose $\psi$ is a subformula of $\phi$ and states satisfying all the immediate subformulas of $\psi$ have already been labeled. We determine by a case analysis which states to label with $\psi$. If $\psi$ is
 	
 	\begin{itemize}
 		\item
 		{
-			$\bot$: then no states are labelled with $\bot$.
+			$\bot$: then no states are labeled with $\bot$.
 			\pause
 		}
 		\item
@@ -70,20 +70,20 @@
 		}
 		\item
 		{
-			$\psi_{1} \land \psi_{2}$: label $s$ with $\psi_{1}$ ? $\psi_{2}$ if $s$ is already labelled both with $\psi_{1}$ and with $\psi_{2}$.
+			$\psi_{1} \land \psi_{2}$: label $s$ with $\psi_{1}$ ? $\psi_{2}$ if $s$ is already labeled both with $\psi_{1}$ and with $\psi_{2}$.
 			\pause
 		}
 		\item
 		{
-			$\neg \psi_{1}$: label $s$ with $\neg \psi_{1}$ if $s$ is not already labelled with $\psi_{1}$.
+			$\neg \psi_{1}$: label $s$ with $\neg \psi_{1}$ if $s$ is not already labeled with $\psi_{1}$.
 			\pause
 		}
 		\item
 		{
 			$\A\F \psi_{1}$:
 			\begin{itemize}
-				\item If any state $s$ is labelled with $\psi_{1}$, label it with $\A\F \psi_{1}$.
-				\item Repeat: label any state with $\A\F \psi_{1}$ if all successor states are labelled with $\A\F \psi_{1}$, until there is no change.
+				\item If any state $s$ is labeled with $\psi_{1}$, label it with $\A\F \psi_{1}$.
+				\item Repeat: label any state with $\A\F \psi_{1}$ if all successor states are labeled with $\A\F \psi_{1}$, until there is no change.
 			\end{itemize} 
 		}
 	\end{itemize} 
@@ -91,22 +91,22 @@
 
 \begin{frame}{The CTL model-checking algorithm}
 	\framesubtitle{The labelling algorithm}
-	Suppose $\psi$ is a subformula of $\phi$ and states satisfying all the immediate subformulas of $\psi$ have already been labelled. We determine by a case analysis which states to label with $\psi$. If $\psi$ is
+	Suppose $\psi$ is a subformula of $\phi$ and states satisfying all the immediate subformulas of $\psi$ have already been labeled. We determine by a case analysis which states to label with $\psi$. If $\psi$ is
 	
 	\begin{itemize}
 		\item
 		{
 			$\E[\psi_{1} \U \psi_{2}]$:
 			\begin{itemize}
-				\item If any state $s$ is labelled with $\psi_{2}$, label it with $\E[\psi_{1} \U \psi_{2}]$.
-				\item Repeat: label any state with $\E[\psi_{1} \U \psi_{2}]$ if it is labelled with $\phi_{1}$ and at least
-				one of its successors is labelled with $\E[\psi_{1} \U \psi_{2}]$, until there is no change.
+				\item If any state $s$ is labeled with $\psi_{2}$, label it with $\E[\psi_{1} \U \psi_{2}]$.
+				\item Repeat: label any state with $\E[\psi_{1} \U \psi_{2}]$ if it is labeled with $\phi_{1}$ and at least
+				one of its successors is labeled with $\E[\psi_{1} \U \psi_{2}]$, until there is no change.
 			\end{itemize}
 			\pause
 		}
 		\item
 		{
-			$\E\X \psi_{1}$: label any state with $\E\X \psi_{1}$ if one of its successors is labelled with $\psi_{1}$.
+			$\E\X \psi_{1}$: label any state with $\E\X \psi_{1}$ if one of its successors is labeled with $\psi_{1}$.
 		}
 	\end{itemize}
 \end{frame}
@@ -116,8 +116,8 @@
 	\begin{itemize}
 		\item
 		{
-			Having performed the labelling for all the subformulas of $\phi$ (including $\phi$
-			itself), we output the states which are labelled $\phi$.
+			Having performed the labeling for all the subformulas of $\phi$ (including $\phi$
+			itself), we output the states which are labeled $\phi$.
 			\pause
 		}
 		\item
@@ -132,7 +132,7 @@
 	\begin{itemize}
 		\item
 		{
-			Here, we present a simple, pretty pseudocode for the labelling algorithm.
+			Here, we present a simple, pretty pseudocode for the labeling algorithm.
 			\pause
 		}
 		\item
