@@ -1,0 +1,93 @@
+\section{Model checking algorithms}
+
+\begin{frame}{The CTL model-checking algorithm}
+	%Some introduction here...
+\end{frame}
+
+\begin{frame}{The CTL model-checking algorithm}
+	\framesubtitle{The labelling algorithm}
+	We present an algorithm which, given a model and a CTL formula, outputs the set of states of the model that satisfy the formula. 
+\end{frame}
+
+\begin{frame}{The CTL model-checking algorithm}
+	\framesubtitle{The labelling algorithm}
+	The algorithm deals explicitly only with some of the CTL connectives; for the others, it tranforms them to their equivalent form in terms of the minimal set of connectives previously definied: $\{\bot, \neg, \land, \A\F, \E\U, \E\X \}$ 
+\end{frame}
+
+\begin{frame}{The CTL model-checking algorithm}
+	\framesubtitle{The labelling algorithm}
+	Here is the algorithm:\\
+	\pause
+	{\bf INPUT}: a CTL model $\M = (S, \to, L)$ and a CTL formula $\phi$.\\
+	{\bf OUTPUT}: the set of states of $\M$ which satisfies $\phi$.\\
+	\pause
+	\begin{itemize}
+		\item
+		{
+			First, rewrite $\phi$ in terms of $\bot, \neg, \land, \A\F, \E\U$ and $\E\X$.
+			\pause
+		}
+		\item
+		{
+			Next, label the states of $\M$ with the subformulas of $\phi$ that are satisfied there, starting with the smallest subformulas and working outwards towards $\phi$.
+		}
+	\end{itemize}
+\end{frame}
+
+\begin{frame}{The CTL model-checking algorithm}
+	\framesubtitle{The labelling algorithm}
+	Suppose $\psi$ is a subformula of $\phi$ and states satisfying all the immediate subformulas of $\psi$ have already been labelled. We determine by a case analysis which states to label with $\psi$. If $\psi$ is
+	
+	\begin{itemize}
+		\item
+		{
+			$\bot$: then no states are labelled with $\bot$.
+			\pause
+		}
+		\item
+		{
+			$p$: then label $s$ with $p$ if $p \in L(s)$.
+			\pause
+		}
+		\item
+		{
+			$\psi_{1} \land \psi_{2}$: label $s$ with $\psi_{1}$ ? $\psi_{2}$ if $s$ is already labelled both with $\psi_{1}$ and with $\psi_{2}$.
+			\pause
+		}
+		\item
+		{
+			$\neg \psi_{1}$: label $s$ with $\neg \psi_{1}$ if $s$ is not already labelled with $\psi_{1}$.
+			\pause
+		}
+		\item
+		{
+			$\A\F \psi_{1}$:
+			\begin{itemize}
+				\item If any state $s$ is labelled with $\psi_{1}$, label it with $\A\F \psi_{1}$.
+				\item Repeat: label any state with $\A\F \psi_{1}$ if all successor states are labelled with $\A\F \psi_{1}$, until there is no change.
+			\end{itemize} 
+		}
+	\end{itemize} 
+\end{frame}
+
+\begin{frame}{The CTL model-checking algorithm}
+	\framesubtitle{The labelling algorithm}
+	Suppose $\psi$ is a subformula of $\phi$ and states satisfying all the immediate subformulas of $\psi$ have already been labelled. We determine by a case analysis which states to label with $\psi$. If $\psi$ is
+	
+	\begin{itemize}
+		\item
+		{
+			$\E[\psi_{1} \U \psi_{2}]$:
+			\begin{itemize}
+				\item If any state $s$ is labelled with $\psi_{2}$, label it with $\E[\psi_{1} \U \psi_{2}]$.
+				\item Repeat: label any state with $\E[\psi_{1} \U \psi_{2}]$ if it is labelled with $\phi_{1}$ and at least
+				one of its successors is labelled with $\E[\psi_{1} \U \psi_{2}]$, until there is no change.
+			\end{itemize}
+			\pause
+		}
+		\item
+		{
+			$\E\X \psi_{1}$: label any state with $\E\X \psi_{1}$ if one of its successors is labelled with $\psi_{1}$.
+		}
+	\end{itemize}
+\end{frame}
