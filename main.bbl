@@ -1,0 +1,28 @@
+\begin{thebibliography}{4}
+\providecommand{\natexlab}[1]{#1}
+\providecommand{\url}[1]{\texttt{#1}}
+\expandafter\ifx\csname urlstyle\endcsname\relax
+  \providecommand{\doi}[1]{doi: #1}\else
+  \providecommand{\doi}{doi: \begingroup \urlstyle{rm}\Url}\fi
+
+\bibitem[Ben-Ari(2012)]{ben2012mathematical}
+Mordechai Ben-Ari.
+\newblock \emph{Mathematical logic for computer science}.
+\newblock Springer Science \& Business Media, 2012.
+
+\bibitem[Huth and Ryan(2004)]{ryan2004logic}
+Michael Huth and Mark Ryan.
+\newblock \emph{Logic in Computer Science}.
+\newblock Cambridge University Press, 2004.
+
+\bibitem[Ben-Ari et~al.(1981)Ben-Ari, Manna, and Pnueli]{benari1981branching}
+Mordechai Ben-Ari, Zohar Manna, and Amir Pnueli.
+\newblock The temporal logic of branching time.
+\newblock 1981.
+
+\bibitem[Artale()]{ArtaleSlide}
+Alessandro Artale.
+\newblock Formal methods lecture iv: Computation tree logic (ctl).
+\newblock URL \url{http://www.inf.unibz.it/~artale/FM/slide4.pdf}.
+
+\end{thebibliography}

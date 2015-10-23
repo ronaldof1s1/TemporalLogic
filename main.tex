@@ -16,7 +16,8 @@
 %\usepackage{listing}
 \usetikzlibrary{arrows}
 %\usepackage{mathdots}
-
+\usepackage{url}
+%\usepackage{hyperref}
 
 \newcommand\mybibname{References}
 \usepackage[sort, numbers]{natbib}
@@ -114,5 +115,11 @@
 \input{topic13}
 \input{topic14}
 \input{topic15}
-
+\nocite{ben2012mathematical}
+\nocite{ryan2004logic}
+\nocite{benari1981branching}
+\nocite{ArtaleSlide}
+\begin{frame}
+   \bibliography{references}
+\end{frame}
 \end{document}
