@@ -1,0 +1,253 @@
+\section{Model checking algorithms}
+
+\begin{frame}{The CTL model-checking algorithm}
+	%Some introduction here...
+\end{frame}
+
+\begin{frame}{The CTL model-checking algorithm}
+	\framesubtitle{The labelling algorithm}
+	We present an algorithm which, given a model and a CTL formula, outputs the set of states of the model that satisfy the formula. 
+\end{frame}
+
+\begin{frame}{The CTL model-checking algorithm}
+	\framesubtitle{The labelling algorithm}
+	The algorithm deals explicitly only with some of the CTL connectives; for the others, it tranforms them to their equivalent form in terms of the minimal set of connectives previously definied: $\{\bot, \neg, \land, \A\F, \E\U, \E\X \}$ 
+\end{frame}
+
+\begin{frame}{The CTL model-checking algorithm}
+	\framesubtitle{The labelling algorithm}
+	Here is the algorithm:\\
+	\pause
+	{\bf INPUT}: a CTL model $\M = (S, \to, L)$ and a CTL formula $\phi$.\\
+	{\bf OUTPUT}: the set of states of $\M$ which satisfies $\phi$.\\
+	\pause
+	\begin{itemize}
+		\item
+		{
+			First, rewrite $\phi$ in terms of $\bot, \neg, \land, \A\F, \E\U$ and $\E\X$.
+			\pause
+		}
+		\item
+		{
+			Next, label the states of $\M$ with the subformulas of $\phi$ that are satisfied there, starting with the smallest subformulas and working outwards towards $\phi$.
+		}
+	\end{itemize}
+\end{frame}
+
+\begin{frame}{The CTL model-checking algorithm}
+	\framesubtitle{The labelling algorithm}
+	Suppose $\psi$ is a subformula of $\phi$ and states satisfying all the immediate subformulas of $\psi$ have already been labelled. We determine by a case analysis which states to label with $\psi$. If $\psi$ is
+	
+	\begin{itemize}
+		\item
+		{
+			$\bot$: then no states are labelled with $\bot$.
+			\pause
+		}
+		\item
+		{
+			$p$: then label $s$ with $p$ if $p \in L(s)$.
+			\pause
+		}
+		\item
+		{
+			$\psi_{1} \land \psi_{2}$: label $s$ with $\psi_{1}$ ? $\psi_{2}$ if $s$ is already labelled both with $\psi_{1}$ and with $\psi_{2}$.
+			\pause
+		}
+		\item
+		{
+			$\neg \psi_{1}$: label $s$ with $\neg \psi_{1}$ if $s$ is not already labelled with $\psi_{1}$.
+			\pause
+		}
+		\item
+		{
+			$\A\F \psi_{1}$:
+			\begin{itemize}
+				\item If any state $s$ is labelled with $\psi_{1}$, label it with $\A\F \psi_{1}$.
+				\item Repeat: label any state with $\A\F \psi_{1}$ if all successor states are labelled with $\A\F \psi_{1}$, until there is no change.
+			\end{itemize} 
+		}
+	\end{itemize} 
+\end{frame}
+
+\begin{frame}{The CTL model-checking algorithm}
+	\framesubtitle{The labelling algorithm}
+	Suppose $\psi$ is a subformula of $\phi$ and states satisfying all the immediate subformulas of $\psi$ have already been labelled. We determine by a case analysis which states to label with $\psi$. If $\psi$ is
+	
+	\begin{itemize}
+		\item
+		{
+			$\E[\psi_{1} \U \psi_{2}]$:
+			\begin{itemize}
+				\item If any state $s$ is labelled with $\psi_{2}$, label it with $\E[\psi_{1} \U \psi_{2}]$.
+				\item Repeat: label any state with $\E[\psi_{1} \U \psi_{2}]$ if it is labelled with $\phi_{1}$ and at least
+				one of its successors is labelled with $\E[\psi_{1} \U \psi_{2}]$, until there is no change.
+			\end{itemize}
+			\pause
+		}
+		\item
+		{
+			$\E\X \psi_{1}$: label any state with $\E\X \psi_{1}$ if one of its successors is labelled with $\psi_{1}$.
+		}
+	\end{itemize}
+\end{frame}
+
+\begin{frame}{The CTL model-checking algorithm}
+	\framesubtitle{The labelling algorithm}
+	\begin{itemize}
+		\item
+		{
+			Having performed the labelling for all the subformulas of $\phi$ (including $\phi$
+			itself), we output the states which are labelled $\phi$.
+			\pause
+		}
+		\item
+		{
+			The complexity of this algorithm is $O(f V (V + E))$, where $f$ is the number of connectives in the formula, $V$ is the number of states and $E$ is the number of transitions.
+		}
+	\end{itemize}
+\end{frame}
+
+\begin{frame}{The CTL model-checking algorithm}
+	\framesubtitle{A pseudocode for labelling algorithm}
+	\begin{itemize}
+		\item
+		{
+			Here, we present a simple, pretty pseudocode for the labelling algorithm.
+			\pause
+		}
+		\item
+		{
+			The program $SAT$ expects a tree-structured CTL formula constructed by means of the BNF showed earlier.
+		}
+	\end{itemize}
+\end{frame}
+
+\begin{frame}{The CTL model-checking algorithm}
+	\framesubtitle{A pseudocode for labelling algorithm}
+		{\bf function} SAT($\phi$)
+		{\bf begin}\\
+		\qquad{\bf case}
+		
+		\qquad  $\phi$ is $\top$: {\bf return} $S$
+		
+		\qquad  $\phi$ is $\bot$: {\bf return} $\emptyset$
+		
+		\qquad  $\phi$ is atomic: {\bf return} $\{ s \in S | \phi \in L(s) \}$
+		
+		\qquad  $\phi$ is $\neg \phi_{1}$: {\bf return} $S - SAT(\phi_{1})$
+		
+		\qquad  $\phi$ is $\phi_{1} \land \phi_{2}$: {\bf return} $SAT(\phi_{1}) \cap SAT(\phi_{2})$
+		
+		\qquad  $\phi$ is $\phi_{1} \lor \phi_{2}$: {\bf return} $SAT(\phi_{1}) \cup SAT(\phi_{2})$
+		
+		\qquad  $\phi$ is $\phi_{1} \rightarrow \phi_{2}$: {\bf return} $SAT(\neg \phi_{1} \lor \phi_{2})$
+		
+		\qquad  $\phi$ is $\A\X \phi_{1}$: {\bf return} $SAT(\neg\E\X\neg \phi_{1})$
+		
+		\qquad  $\phi$ is $\E\X \phi_{1}$: {\bf return} $SAT_{\E\X}(\phi_{1})$
+		
+		\qquad  $\phi$ is $\A[\phi_{1} \U \phi_{2}]$: {\bf return} $SAT(\neg( \E[\neg \phi_{2} \U (\neg \phi_{1} \land \phi_{2})] \lor \E\G\neg \phi_{2} ))$
+		
+		\qquad  $\phi$ is $\E[\phi_{1} \U \phi_{2}]$: {\bf return} $SAT_{EU}(\phi_{1}, \phi_{2})$\\
+		
+\end{frame}
+
+\begin{frame}{The CTL model-checking algorithm}
+	\framesubtitle{A pseudocode for labelling algorithm}
+	\qquad  $\phi$ is $\E\F \phi_{1}$: {\bf return} $SAT(\E(\top \U \phi_{1}))$
+	
+	\qquad  $\phi$ is $\E\G \phi_{1}$: {\bf return} $SAT(\neg\A\F\neg \phi_{1})$
+	
+	\qquad  $\phi$ is $\A\F \phi_{1}$: {\bf return} $SAT_{AF}(\phi_{1})$
+	
+	\qquad  $\phi$ is $\A\G \phi_{1}$: {\bf return} $SAT(\neg\E\F\neg \phi_{1})$
+	
+	\qquad {\bf end case}\\
+	{\bf end function}
+\end{frame}
+
+\begin{frame}{The CTL model-checking algorithm}
+	\framesubtitle{A pseudocode for labelling algorithm}
+	\begin{itemize}
+		\item
+		{
+			SAT handles with the easy cases (the propositional) directly and passes more complicated cases (the temporal) on to special procedures.
+			\pause
+		}
+		\item
+		{
+			These special procedures uses the following functions:\\
+			\pause
+			$pre_{\exists}(Y) = \{ s \in S | \exists s' (s \to s' \land s' \in Y) \}$\\
+			$pre_{\forall}(Y) = \{ s \in S | \forall s' (s \to s' \longrightarrow s' \in Y) \}$
+			\pause
+		}
+		\item
+		{
+			`pre' denotes travelling backwards along the transition relation.
+			\pause
+		}
+		\item
+		{
+			$pre_{\exists}$ returns set of states of $S$ which {\it can} make a transition into $S$.
+			\pause
+		}
+		\item
+		{
+			$pre_{\forall}$ returns the set of states of $S$ which make transitions {\it only} into $Y$. 
+		}
+	\end{itemize}
+\end{frame}
+
+\begin{frame}{The CTL model-checking algorithm}
+	\framesubtitle{A pseudocode for labelling algorithm}
+	The pseudocode for the special procedures of SAT are the following.
+\end{frame}
+
+\begin{frame}{The CTL model-checking algorithm}
+	\framesubtitle{A pseudocode for labelling algorithm}
+	
+	{\bf function} $SAT_{\E\X}$($\phi$)\\
+	{\bf local var} $X$, $Y$\\
+	{\bf begin}\\
+	\qquad $X := SAT(\phi)$\\
+	\qquad $Y := pre_{\exists}(X)$\\
+	\qquad {\bf return} $Y$\\
+	{\bf end}
+\end{frame}
+
+\begin{frame}{The CTL model-checking algorithm}
+	\framesubtitle{A pseudocode for labelling algorithm}
+	
+	{\bf function} $SAT_{\A\F}$($\phi$)\\
+	{\bf local var} $X$, $Y$\\
+	{\bf begin}\\
+	\qquad $X := S$\\
+	\qquad $Y := SAT(X)$\\
+	\qquad {\bf repeat until} $X = Y$\\
+	\qquad {\bf begin}\\
+	\qquad\qquad $X := Y$\\
+	\qquad\qquad $Y := Y \cup pre_{\forall}(Y)$\\
+	\qquad {\bf end}\\
+	\qquad {\bf return} $Y$\\
+	{\bf end}
+\end{frame}
+
+\begin{frame}{The CTL model-checking algorithm}
+	\framesubtitle{A pseudocode for labelling algorithm}
+	
+	{\bf function} $SAT_{\E\U}$($\phi$, $\psi$)\\
+	{\bf local var} $W$, $X$, $Y$\\
+	{\bf begin}\\
+	\qquad $W := SAT(\phi)$\\
+	\qquad $X := S$\\
+	\qquad $Y := SAT(\psi)$\\
+	\qquad {\bf repeat until} $X = Y$\\
+	\qquad {\bf begin}\\
+	\qquad\qquad $X := Y$\\
+	\qquad\qquad $Y := Y \cup (W \cap pre_{\exists}(Y))$\\
+	\qquad {\bf end}\\
+	\qquad {\bf return} $Y$\\
+	{\bf end}
+\end{frame}
