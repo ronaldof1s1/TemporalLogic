@@ -91,3 +91,19 @@
 		}
 	\end{itemize}
 \end{frame}
+
+\begin{frame}{The CTL model-checking algorithm}
+	\framesubtitle{The labelling algorithm}
+	\begin{itemize}
+		\item
+		{
+			Having performed the labelling for all the subformulas of $\phi$ (including $\phi$
+			itself), we output the states which are labelled $\phi$.
+			\pause
+		}
+		\item
+		{
+			The complexity of this algorithm is $O(f V (V + E))$, where $f$ is the number of connectives in the formula, $V$ is the number of states and $E$ is the number of transitions.
+		}
+	\end{itemize}
+\end{frame}
