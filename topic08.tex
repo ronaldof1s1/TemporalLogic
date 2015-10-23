@@ -107,3 +107,62 @@
 		}
 	\end{itemize}
 \end{frame}
+
+\begin{frame}{The CTL model-checking algorithm}
+	\framesubtitle{A pseudocode for labelling algorithm}
+	\begin{itemize}
+		\item
+		{
+			Here, we present a simple, pretty pseudocode for the labelling algorithm.
+			\pause
+		}
+		\item
+		{
+			The program $SAT$ expects a tree-structured CTL formula constructed by means of the BNF showed earlier.
+		}
+	\end{itemize}
+\end{frame}
+
+\begin{frame}{The CTL model-checking algorithm}
+	\framesubtitle{A pseudocode for labelling algorithm}
+		function SAT($\phi$)
+		{\bf begin}\\
+		\qquad{\bf case}
+		
+		\qquad  $\phi$ is $\top$: {\bf return} $S$
+		
+		\qquad  $\phi$ is $\bot$: {\bf return} $\emptyset$
+		
+		\qquad  $\phi$ is atomic: {\bf return} $\{ s \in S | \phi \in L(s) \}$
+		
+		\qquad  $\phi$ is $\neg \phi_{1}$: {\bf return} $S - SAT(\phi_{1})$
+		
+		\qquad  $\phi$ is $\phi_{1} \land \phi_{2}$: {\bf return} $SAT(\phi_{1}) \cap SAT(\phi_{2})$
+		
+		\qquad  $\phi$ is $\phi_{1} \lor \phi_{2}$: {\bf return} $SAT(\phi_{1}) \cup SAT(\phi_{2})$
+		
+		\qquad  $\phi$ is $\phi_{1} \rightarrow \phi_{2}$: {\bf return} $SAT(\neg \phi_{1} \lor \phi_{2})$
+		
+		\qquad  $\phi$ is $\A\X \phi_{1}$: {\bf return} $SAT(\neg\E\X\neg \phi_{1})$
+		
+		\qquad  $\phi$ is $\E\X \phi_{1}$: {\bf return} $SAT_{\E\X}(\phi_{1})$
+		
+		\qquad  $\phi$ is $\A[\phi_{1} \U \phi_{2}]$: {\bf return} $SAT(\neg( \E[\neg \phi_{2} \U (\neg \phi_{1} \land \phi_{2})] \lor \E\G\neg \phi_{2} ))$
+		
+		\qquad  $\phi$ is $\E[\phi_{1} \U \phi_{2}]$: {\bf return} $SAT_{EU}(\phi_{1}, \phi_{2})$\\
+		
+\end{frame}
+
+\begin{frame}{The CTL model-checking algorithm}
+	\framesubtitle{A pseudocode for labelling algorithm}
+	\qquad  $\phi$ is $\E\F \phi_{1}$: {\bf return} $SAT(\E(\top \U \phi_{1}))$
+	
+	\qquad  $\phi$ is $\E\G \phi_{1}$: {\bf return} $SAT(\neg\A\F\neg \phi_{1})$
+	
+	\qquad  $\phi$ is $\A\F \phi_{1}$: {\bf return} $SAT_{AF}(\phi_{1})$
+	
+	\qquad  $\phi$ is $\A\G \phi_{1}$: {\bf return} $SAT(\neg\E\F\neg \phi_{1})$
+	
+	\qquad {\bf end case}\\
+	{\bf end function}
+\end{frame}
