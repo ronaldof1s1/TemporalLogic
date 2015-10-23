@@ -1,7 +1,26 @@
 \section{Model checking algorithms}
 
 \begin{frame}{The CTL model-checking algorithm}
-	%Some introduction here...
+	\begin{itemize}
+		\item
+		{
+			Given a property of a program expressed in a temporal logic, the model checker checks if the states of the program satisfy the formula.
+			\pause
+		}
+		\item
+		{
+			As oubvious, we use CTL formulas.
+			\pause
+		}
+		\item
+		{
+			There are two different ways of working with model checking:\\
+			\pause
+			Given a model and a state and a formula, tells if the model and the state satisfies the formula;\\
+			\pause
+			Given a model and a formula, returns the set of states that satisfies the formula.
+		}
+	\end{itemize}
 \end{frame}
 
 \begin{frame}{The CTL model-checking algorithm}
