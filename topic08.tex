@@ -125,7 +125,7 @@
 
 \begin{frame}{The CTL model-checking algorithm}
 	\framesubtitle{A pseudocode for labelling algorithm}
-		function SAT($\phi$)
+		{\bf function} SAT($\phi$)
 		{\bf begin}\\
 		\qquad{\bf case}
 		
@@ -165,4 +165,89 @@
 	
 	\qquad {\bf end case}\\
 	{\bf end function}
+\end{frame}
+
+\begin{frame}{The CTL model-checking algorithm}
+	\framesubtitle{A pseudocode for labelling algorithm}
+	\begin{itemize}
+		\item
+		{
+			SAT handles with the easy cases (the propositional) directly and passes more complicated cases (the temporal) on to special procedures.
+			\pause
+		}
+		\item
+		{
+			These special procedures uses the following functions:\\
+			\pause
+			$pre_{\exists}(Y) = \{ s \in S | \exists s' (s \to s' \land s' \in Y) \}$\\
+			$pre_{\forall}(Y) = \{ s \in S | \forall s' (s \to s' \longrightarrow s' \in Y) \}$
+			\pause
+		}
+		\item
+		{
+			`pre' denotes travelling backwards along the transition relation.
+			\pause
+		}
+		\item
+		{
+			$pre_{\exists}$ returns set of states of $S$ which {\it can} make a transition into $S$.
+			\pause
+		}
+		\item
+		{
+			$pre_{\forall}$ returns the set of states of $S$ which make transitions {\it only} into $Y$. 
+		}
+	\end{itemize}
+\end{frame}
+
+\begin{frame}{The CTL model-checking algorithm}
+	\framesubtitle{A pseudocode for labelling algorithm}
+	The pseudocode for the special procedures of SAT are the following.
+\end{frame}
+
+\begin{frame}{The CTL model-checking algorithm}
+	\framesubtitle{A pseudocode for labelling algorithm}
+	
+	{\bf function} $SAT_{\E\X}$($\phi$)\\
+	{\bf local var} $X$, $Y$\\
+	{\bf begin}\\
+	\qquad $X := SAT(\phi)$\\
+	\qquad $Y := pre_{\exists}(X)$\\
+	\qquad {\bf return} $Y$\\
+	{\bf end}
+\end{frame}
+
+\begin{frame}{The CTL model-checking algorithm}
+	\framesubtitle{A pseudocode for labelling algorithm}
+	
+	{\bf function} $SAT_{\A\F}$($\phi$)\\
+	{\bf local var} $X$, $Y$\\
+	{\bf begin}\\
+	\qquad $X := S$\\
+	\qquad $Y := SAT(X)$\\
+	\qquad {\bf repeat until} $X = Y$\\
+	\qquad {\bf begin}\\
+	\qquad\qquad $X := Y$\\
+	\qquad\qquad $Y := Y \cup pre_{\forall}(Y)$\\
+	\qquad {\bf end}\\
+	\qquad {\bf return} $Y$\\
+	{\bf end}
+\end{frame}
+
+\begin{frame}{The CTL model-checking algorithm}
+	\framesubtitle{A pseudocode for labelling algorithm}
+	
+	{\bf function} $SAT_{\E\U}$($\phi$, $\psi$)\\
+	{\bf local var} $W$, $X$, $Y$\\
+	{\bf begin}\\
+	\qquad $W := SAT(\phi)$\\
+	\qquad $X := S$\\
+	\qquad $Y := SAT(\psi)$\\
+	\qquad {\bf repeat until} $X = Y$\\
+	\qquad {\bf begin}\\
+	\qquad\qquad $X := Y$\\
+	\qquad\qquad $Y := Y \cup (W \cap pre_{\exists}(Y))$\\
+	\qquad {\bf end}\\
+	\qquad {\bf return} $Y$\\
+	{\bf end}
 \end{frame}
